@@ -27449,8 +27449,8 @@ if (window.Element && !Element.prototype.closest) {
   ();
 
 /* smoothscroll v0.4.4 - 2019 - Dustan Kasten, Jeremias Menichelli - MIT License */
-(function () {/* eslint-disable */
-  'use strict';
+(function () {
+  'use strict'; /* eslint-disable */
 
   // polyfill
   function polyfill() {
@@ -27488,7 +27488,7 @@ if (window.Element && !Element.prototype.closest) {
      * indicates if a the current browser is made by Microsoft
      * @method isMicrosoftBrowser
      * @param {String} userAgent
-     * @return {Boolean}
+     * @returns {Boolean}
      */
     function isMicrosoftBrowser(userAgent) {
       var userAgentPatterns = ['MSIE ', 'Trident/', 'Edge/'];
@@ -27508,7 +27508,7 @@ if (window.Element && !Element.prototype.closest) {
      * @method scrollElement
      * @param {Number} x
      * @param {Number} y
-     * @return {undefined}
+     * @returns {undefined}
      */
     function scrollElement(x, y) {
       this.scrollLeft = x;
@@ -27519,7 +27519,7 @@ if (window.Element && !Element.prototype.closest) {
      * returns result of applying ease math function to a number
      * @method ease
      * @param {Number} k
-     * @return {Number}
+     * @returns {Number}
      */
     function ease(k) {
       return 0.5 * (1 - Math.cos(Math.PI * k));
@@ -27529,7 +27529,7 @@ if (window.Element && !Element.prototype.closest) {
      * indicates if a smooth behavior should be applied
      * @method shouldBailOut
      * @param {Number|Object} firstArg
-     * @return {Boolean}
+     * @returns {Boolean}
      */
     function shouldBailOut(firstArg) {
       if (
@@ -27552,8 +27552,8 @@ if (window.Element && !Element.prototype.closest) {
       // throw error when behavior is not supported
       throw new TypeError(
         'behavior member of ScrollOptions ' +
-        firstArg.behavior +
-        ' is not a valid value for enumeration ScrollBehavior.'
+          firstArg.behavior +
+          ' is not a valid value for enumeration ScrollBehavior.'
       );
     }
 
@@ -27562,7 +27562,7 @@ if (window.Element && !Element.prototype.closest) {
      * @method hasScrollableSpace
      * @param {Node} el
      * @param {String} axis
-     * @return {Boolean}
+     * @returns {Boolean}
      */
     function hasScrollableSpace(el, axis) {
       if (axis === 'Y') {
@@ -27579,7 +27579,7 @@ if (window.Element && !Element.prototype.closest) {
      * @method canOverflow
      * @param {Node} el
      * @param {String} axis
-     * @return {Boolean}
+     * @returns {Boolean}
      */
     function canOverflow(el, axis) {
       var overflowValue = w.getComputedStyle(el, null)['overflow' + axis];
@@ -27592,7 +27592,7 @@ if (window.Element && !Element.prototype.closest) {
      * @method isScrollable
      * @param {Node} el
      * @param {String} axis
-     * @return {Boolean}
+     * @returns {Boolean}
      */
     function isScrollable(el) {
       var isScrollableY = hasScrollableSpace(el, 'Y') && canOverflow(el, 'Y');
@@ -27605,7 +27605,7 @@ if (window.Element && !Element.prototype.closest) {
      * finds scrollable parent of an element
      * @method findScrollableParent
      * @param {Node} el
-     * @return {Node} el
+     * @returns {Node} el
      */
     function findScrollableParent(el) {
       while (el !== d.body && isScrollable(el) === false) {
@@ -27619,7 +27619,7 @@ if (window.Element && !Element.prototype.closest) {
      * self invoked function that, given a context, steps through scrolling
      * @method step
      * @param {Object} context
-     * @return {undefined}
+     * @returns {undefined}
      */
     function step(context) {
       var time = now();
@@ -27651,7 +27651,7 @@ if (window.Element && !Element.prototype.closest) {
      * @param {Object|Node} el
      * @param {Number} x
      * @param {Number} y
-     * @return {undefined}
+     * @returns {undefined}
      */
     function smoothScroll(el, x, y) {
       var scrollable;
@@ -27687,7 +27687,7 @@ if (window.Element && !Element.prototype.closest) {
 
     // ORIGINAL METHODS OVERRIDES
     // w.scroll and w.scrollTo
-    w.scroll = w.scrollTo = function () {
+    w.scroll = w.scrollTo = function() {
       // avoid action when no arguments are passed
       if (arguments[0] === undefined) {
         return;
@@ -27727,7 +27727,7 @@ if (window.Element && !Element.prototype.closest) {
     };
 
     // w.scrollBy
-    w.scrollBy = function () {
+    w.scrollBy = function() {
       // avoid action when no arguments are passed
       if (arguments[0] === undefined) {
         return;
@@ -27739,14 +27739,10 @@ if (window.Element && !Element.prototype.closest) {
           w,
           arguments[0].left !== undefined
             ? arguments[0].left
-            : typeof arguments[0] !== 'object'
-              ? arguments[0]
-              : 0,
+            : typeof arguments[0] !== 'object' ? arguments[0] : 0,
           arguments[0].top !== undefined
             ? arguments[0].top
-            : arguments[1] !== undefined
-              ? arguments[1]
-              : 0
+            : arguments[1] !== undefined ? arguments[1] : 0
         );
 
         return;
@@ -27762,7 +27758,7 @@ if (window.Element && !Element.prototype.closest) {
     };
 
     // Element.prototype.scroll and Element.prototype.scrollTo
-    Element.prototype.scroll = Element.prototype.scrollTo = function () {
+    Element.prototype.scroll = Element.prototype.scrollTo = function() {
       // avoid action when no arguments are passed
       if (arguments[0] === undefined) {
         return;
@@ -27780,15 +27776,11 @@ if (window.Element && !Element.prototype.closest) {
           // use left prop, first number argument or fallback to scrollLeft
           arguments[0].left !== undefined
             ? ~~arguments[0].left
-            : typeof arguments[0] !== 'object'
-              ? ~~arguments[0]
-              : this.scrollLeft,
+            : typeof arguments[0] !== 'object' ? ~~arguments[0] : this.scrollLeft,
           // use top prop, second argument or fallback to scrollTop
           arguments[0].top !== undefined
             ? ~~arguments[0].top
-            : arguments[1] !== undefined
-              ? ~~arguments[1]
-              : this.scrollTop
+            : arguments[1] !== undefined ? ~~arguments[1] : this.scrollTop
         );
 
         return;
@@ -27807,7 +27799,7 @@ if (window.Element && !Element.prototype.closest) {
     };
 
     // Element.prototype.scrollBy
-    Element.prototype.scrollBy = function () {
+    Element.prototype.scrollBy = function() {
       // avoid action when no arguments are passed
       if (arguments[0] === undefined) {
         return;
@@ -27836,7 +27828,7 @@ if (window.Element && !Element.prototype.closest) {
     };
 
     // Element.prototype.scrollIntoView
-    Element.prototype.scrollIntoView = function () {
+    Element.prototype.scrollIntoView = function() {
       // avoid smooth behavior if not required
       if (shouldBailOut(arguments[0]) === true) {
         original.scrollIntoView.call(
@@ -27882,14 +27874,14 @@ if (window.Element && !Element.prototype.closest) {
 
   if (typeof exports === 'object' && typeof module !== 'undefined') {
     // commonjs
-    module.exports = {
-      polyfill: polyfill
-    };
+    module.exports = { polyfill: polyfill };
   } else {
     // global
     polyfill();
   }
-})();
+
+}());
+
 
 /* eslint-disable */
 
