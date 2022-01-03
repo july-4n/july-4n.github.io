@@ -1,0 +1,42 @@
+.main-nav {
+  position: relative;
+}
+
+.main-nav__toggle {
+  position: absolute;
+  top: -40px;
+  right: 20px;
+
+  cursor: pointer;
+  border: none;
+
+  background-color: transparent;
+}
+
+.main-nav--closed .main-nav__toggle::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 24px;
+  height: 18px;
+
+  background-image: url("../img/icon-mobile-menu.svg");
+  background-repeat: no-repeat;
+}
+
+.main-nav--opened .main-nav__toggle::before {
+  content: "";
+
+  position: absolute;
+  top: -20px;
+  left: 70px;
+
+  width: 18px;
+  height: 18px;
+
+  background-image: url("../img/icon-close.svg");
+  background-repeat: no-repeat;
+}

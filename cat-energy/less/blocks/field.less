@@ -1,0 +1,36 @@
+.field {
+  .font(@fz: 16px);
+  min-height: 45px;
+  padding: 0;
+  padding-left: 14px;
+  box-sizing: border-box;
+  font-family: @base-font;
+  text-transform: uppercase;
+  color: @midnight-grey;
+  border: 1px solid rgba(205, 205, 205, 0.5);
+  outline: none;
+
+  &:invalid {
+    border: 2px solid @error;
+  }
+
+  &:required {
+    border: 1px solid rgba(205, 205, 205, 0.5);
+  }
+
+  &:hover {
+    border: 1px solid rgba(205, 205, 205, 1);
+  }
+
+  &:focus {
+    border: 2px solid @midnight-grey;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .field {
+    .font(@fz: 20px, @lh: 20px);
+    min-height: 52px;
+    padding-left: 19px;
+  }
+}

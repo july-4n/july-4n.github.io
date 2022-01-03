@@ -1,0 +1,37 @@
+.copyright {
+  width: @content-mobile-width;
+  padding-top: 44px;
+}
+
+.copyright__link {
+  .font(@fz: 16px, @lh: 16px);
+  font-family: @addition-font;
+  color: @midnight-grey;
+  padding-top: 8px;
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.copyright__link-icon {
+  width: 27px;
+  height: 34px;
+  fill: #666666;
+
+  &:hover {
+    fill: @green;
+  }
+
+  &:active {
+    fill: @green;
+    opacity: 0.3;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .copyright {
+    width: 165px;
+    padding-top: 15px;
+  }
+}

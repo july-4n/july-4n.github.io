@@ -1,0 +1,32 @@
+.catalog-info {
+  width: @mobile-width;
+  margin: 0 auto;
+}
+
+.catalog-info__title {
+  .font(@fz: 36px, @lh: 60px);
+  margin: 0;
+  padding: 15px 0 26px 20px;
+}
+
+@media (min-width: @tablet-width) {
+  .catalog-info {
+    width: @tablet-width;
+  }
+
+  .catalog-info__title {
+    .font(@fz: 60px, @lh: 60px);
+    padding: 55px 0 13px 30px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .catalog-info {
+    width: @content-desktop-width;
+  }
+
+  .catalog-info__title {
+    padding-top: 73px;
+    padding-left: 0;
+  }
+}

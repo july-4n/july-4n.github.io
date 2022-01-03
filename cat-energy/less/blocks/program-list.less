@@ -1,0 +1,133 @@
+.program-list {
+  .reset-list();
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 25px;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.program-list__item {
+  position: relative;
+  padding-top: 26px;
+  padding-left: 50px;
+}
+
+.program-list__input--radio {
+  display: none;
+}
+
+.program-list__input--radio + label {
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 21px;
+    left: 18px;
+
+    width: 30px;
+    height: 30px;
+
+    border: 1px solid #cdcdcd;
+    border-radius: 50%;
+  }
+
+  &:hover::before {
+    border: 1px solid #bababa;
+  }
+
+  &:active::before {
+    opacity: 0.3;
+  }
+}
+
+.program-list__input--radio:checked + label {
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 31px;
+    left: 28px;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+    background-color: @green;
+  }
+
+  &:active::after {
+    opacity: 0.3;
+  }
+}
+
+.program-list__label {
+  padding-left: 15px;
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .program-list {
+    margin-left: 41px;
+    margin-right: 37px;
+    padding-bottom: 35px;
+    border: 1px solid #e6e6e6;
+  }
+
+  .program-list__item {
+    padding-top: 33px;
+    padding-left: 70px;
+  }
+
+  .program-list__input--radio + label::before {
+    content: "";
+
+    position: absolute;
+    top: 23px;
+    left: 28px;
+
+    width: 37px;
+    height: 37px;
+
+    border: 1px solid #cdcdcd;
+    border-radius: 50%;
+  }
+
+  .program-list__input--radio:checked + label::after {
+    content: "";
+
+    position: absolute;
+    top: 33px;
+    left: 38px;
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+    background-color: @green;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .program-list {
+    width: 570px;
+    margin: 0;
+  }
+
+  .program-list__item {
+    padding-left: 76px;
+  }
+
+  .program-list__input--radio + label::before {
+    top: 25px;
+    left: 33px;
+  }
+
+  .program-list__input--radio:checked + label::after {
+    top: 35px;
+    left: 43px;
+  }
+}

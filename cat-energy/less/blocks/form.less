@@ -1,0 +1,311 @@
+.form {
+  width: @mobile-width;
+  margin: 0 auto;
+}
+
+.form__wrapper {
+  margin-bottom: 28px;
+}
+
+.form__items {
+  .reset-list();
+}
+
+.form__list {
+  .font(@fz: 16px);
+  text-transform: uppercase;
+  color: #222222;
+}
+
+.form__title {
+  .font(@fz: 24px, @lh: 24px);
+  padding-left: 19px;
+}
+
+.form__title--contacts {
+  position: relative;
+  width: 202px;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 14px;
+    right: -118px;
+
+    width: 99px;
+    height: 3px;
+
+    background-color: @green;
+  }
+}
+
+.form__textarea {
+  .reset-list();
+}
+
+.form__title--comment {
+  position: relative;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 15px;
+    right: -180px;
+
+    width: 158px;
+    height: 3px;
+
+    background-color: @green;
+  }
+}
+
+.form__comment {
+  .font(@fz: 16px);
+  min-width: @content-mobile-width;
+  height: 150px;
+  margin: 36px 0 26px 20px;
+  padding: 12px 0 0 14px;
+  box-sizing: border-box;
+  font-family: @base-font;
+  text-transform: uppercase;
+  color: @midnight-grey;
+  border: 1px solid rgba(205, 205, 205, 0.5);
+  resize: none;
+  overflow: auto;
+}
+
+.form__title--addition {
+  position: relative;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: 13px;
+    right: -160px;
+
+    width: 136px;
+    height: 3px;
+
+    background-color: @green;
+  }
+}
+
+.form__form-button {
+  text-align: center;
+}
+
+.form__button {
+  .font(@fz: 16px, @lh: 20px);
+  width: 280px;
+  margin-bottom: 19px;
+  margin-left: 20px;
+  padding: 0;
+  font-family: @base-font;
+}
+
+.form__note {
+  .font(@lh: 16px);
+  font-family: @addition-font;
+  color: @midnight-grey;
+}
+
+@media (min-width: @tablet-width) {
+  .form {
+    width: @content-tablet-width;
+  }
+
+  .form__wrapper {
+    margin-bottom: 76px;
+  }
+
+  .form__list {
+    .font(@fz: 20px, @lh: 20px);
+  }
+
+  .form__title {
+    .font(@fz: 36px, @lh: 36px);
+    padding-left: 39px;
+  }
+
+  .form__title--contacts {
+    width: 100%;
+
+    &::before {
+      top: 21px;
+      right: -30px;
+
+      width: 145px;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 21px;
+      left: -30px;
+
+      width: 30px;
+      height: 3px;
+
+      background: @green;
+    }
+  }
+
+  .form__title--comment {
+    &::before {
+      top: 21px;
+      right: -518px;
+
+      width: 479px;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 21px;
+      left: -30px;
+
+      width: 30px;
+      height: 3px;
+
+      background: @green;
+    }
+  }
+
+  .form__comment {
+    .font(@fz: 20px, @lh: 30px);
+    min-width: 631px;
+    height: 174px;
+    margin: 77px 0 61px 39px;
+    padding-top: 9px;
+    padding-left: 19px;
+  }
+
+  .form__title--addition {
+    &::before {
+      top: 21px;
+      right: -488px;
+
+      width: 446px;
+    }
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      top: 21px;
+      right: -490px;
+
+      width: 30px;
+      height: 3px;
+
+      background: @green;
+    }
+  }
+
+  .form__form-button {
+    display: flex;
+    justify-content: space-between;
+    width: 544px;
+    margin-left: 20px;
+  }
+
+  .form__button {
+    .font(@fz: 20px, @lh: 20px);
+    width: 283px;
+    height: 52px;
+  }
+
+  .form__note {
+    .font(@fz: 16px, @lh: 16px);
+    padding-top: 16px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .form {
+    width: @content-desktop-width;
+  }
+
+  .form__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: @content-desktop-width;
+    margin: 0;
+  }
+
+  .form__title {
+    padding-left: 0;
+  }
+
+  .form__title--contacts {
+    &::before {
+      top: 20px;
+      right: -112px;
+
+      width: 776px;
+    }
+
+    &::after {
+      top: 20px;
+      left: -110px;
+
+      width: 70px;
+    }
+  }
+
+  .form__title--comment {
+    &::before {
+      top: 22px;
+      right: -1151px;
+
+      width: 1111px;
+    }
+
+    &::after {
+      top: 22px;
+      left: -110px;
+
+      width: 70px;
+    }
+  }
+
+  .form__comment {
+    min-width: 1220px;
+    margin-left: 3px;
+  }
+
+  .form__title--addition {
+    &::before {
+      top: 24px;
+      right: -1121px;
+
+      width: 1078px;
+    }
+
+    &::after {
+      top: 24px;
+      left: -110px;
+
+      width: 70px;
+    }
+  }
+
+  .form__note {
+    padding-top: 18px;
+  }
+
+  .form__form-button {
+    width: 850px;
+    margin-left: -18px;
+    padding-top: 7px;
+  }
+
+  .form__button {
+    width: 568px;
+  }
+}

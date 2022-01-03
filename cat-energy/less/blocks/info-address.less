@@ -1,0 +1,47 @@
+.info-address__title {
+  .font(@fz: 16px, @lh: 20px);
+  display: block;
+  width: 124px;
+  text-transform: uppercase;
+}
+
+.info-address__address {
+  .font(@lh: 20px);
+  width: 139px;
+  margin: 0;
+  font-family: @addition-font;
+  color: @midnight-grey;
+}
+
+@media (min-width: @tablet-width) {
+  .info-address__title {
+    .font(@fz: 20px, @lh: 25px);
+    width: 155px;
+    padding-top: 2px;
+  }
+
+  .info-address__address {
+    .font(@fz: 16px, @lh: 20px);
+    width: 155px;
+    text-align: right;
+  }
+
+  .info-address__city {
+    display: block;
+    padding-top: 20px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .info-address {
+    position: absolute;
+    justify-content: space-between;
+    box-sizing: border-box;
+    background-color: @white;
+  }
+
+  .info-address__address {
+    padding-left: 95px;
+    text-align: left;
+  }
+}

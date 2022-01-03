@@ -1,0 +1,147 @@
+.toggles-info {
+  display: flex;
+  justify-content: space-between;
+  width: 197px;
+  margin: 0 auto;
+  padding-bottom: 37px;
+}
+
+.toggles-info__before,
+.toggles-info__after {
+  .font(@fz: 16px, @lh: 20px);
+  padding-top: 29px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.toggles-info__bar {
+  position: relative;
+  width: 84px;
+  height: 14px;
+  margin-top: 32px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  border: 1px solid #cdcdcd;
+  background-color: @white;
+}
+
+.toggles-info__toggle {
+  position: absolute;
+  top: 3px;
+  left: 8px;
+
+  width: 35px;
+  height: 6px;
+
+  box-sizing: border-box;
+  border-radius: 3px;
+  background-color: @green;
+}
+
+@media (min-width: @tablet-width) {
+  .toggles-info {
+    width: 712px;
+    padding-bottom: 69px;
+    align-items: center;
+  }
+
+  .toggles-info__bar {
+    width: 428px;
+    height: 6px;
+    margin-top: 5px;
+    border-radius: 3px;
+    border: none;
+    background-color: #dcdcdc;
+  }
+
+  .toggles-info__toggle {
+    position: relative;
+    top: -14px;
+    left: 200px;
+
+    width: 34px;
+    height: 34px;
+
+    border: 1px solid #cdcdcd;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      top: 12px;
+      left: 12px;
+
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+      background-color: @green;
+    }
+
+    &:hover {
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+    }
+
+    &:active {
+      border: 2px solid @green;
+      box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    &:active::before {
+      top: 11px;
+      left: 11px;
+    }
+  }
+
+  .toggles-info__before,
+  .toggles-info__after {
+    .font(@fz: 20px, @lh: 20px);
+    display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px dotted rgba(17, 17, 17, 0.23);
+
+    &:hover {
+      border-bottom: 1px solid rgba(17, 17, 17, 0.4);
+    }
+
+    &:active {
+      border-bottom: none;
+    }
+  }
+
+  .toggles-info__before {
+    margin-left: 70px;
+  }
+
+  .toggles-info__after {
+    margin-right: 72px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .toggles-info {
+    width: 722px;
+  }
+
+  .toggles-info__before,
+  .toggles-info__after {
+    padding-top: 36px;
+  }
+
+  .toggles-info__bar {
+    position: relative;
+    margin-top: 29px;
+  }
+
+  .toggles-info__before {
+    margin-left: 84px;
+  }
+
+  .toggles-info__after {
+    margin-right: 68px;
+  }
+}

@@ -1,0 +1,107 @@
+.addition-list {
+  .reset-list();
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 14px;
+  margin-bottom: 38px;
+  padding-left: 20px;
+}
+
+.addition-list__item {
+  padding-top: 25px;
+}
+
+.addition-list__label {
+  position: relative;
+  display: block;
+  padding-left: 47px;
+  cursor: pointer;
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.addition-list__input--checkbox {
+  display: none;
+}
+
+.addition-list__input--checkbox + label::before {
+  content: "";
+
+  position: absolute;
+  top: -6px;
+  left: 0;
+
+  width: 30px;
+  height: 30px;
+
+  border: 1px solid red;
+}
+
+.addition-list__input--checkbox + label:hover::before {
+  border: 1px solid #bababa;
+}
+
+.addition-list__input--checkbox:checked + label::after {
+  content: "";
+
+  position: absolute;
+  top: 3px;
+  left: 6px;
+
+  width: 21px;
+  height: 15px;
+
+  background-image: url("../img/icon-tick.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+@media (min-width: @tablet-width) {
+  .addition-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 576px;
+    margin-top: 39px;
+    margin-bottom: 35px;
+    padding-left: 51px;
+  }
+
+  .addition-list__item {
+    width: 230px;
+    padding-top: 27px;
+    padding-bottom: 28px;
+  }
+
+  .addition-list__input--checkbox + label::before {
+    content: "";
+
+    position: absolute;
+    top: -10px;
+    left: -12px;
+
+    width: 39px;
+    height: 39px;
+
+    border: 1px solid #cdcdcd;
+  }
+
+  .addition-list__input--checkbox:checked + label::after {
+    content: "";
+
+    position: absolute;
+    top: 5px;
+    left: 0;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .addition-list {
+    flex-wrap: nowrap;
+    width: 1204px;
+    margin-top: 40px;
+    padding-left: 14px;
+  }
+}

@@ -1,0 +1,128 @@
+.show-more {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 55px;
+}
+
+.show-more::before {
+  content: "";
+
+  position: absolute;
+  top: 28px;
+  left: 144px;
+
+  width: 30px;
+  height: 30px;
+
+  background-image: url("../img/icon-plus-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  fill: #222222;
+  opacity: 0.2;
+}
+
+.show-more__title {
+  .font(@fz: 16px, @lh: 20px);
+  margin: 0;
+  padding-top: 26px;
+  padding-left: 39px;
+  padding-bottom: 7px;
+  text-transform: uppercase;
+}
+
+.show-more__text {
+  .font(@fz: 12px);
+  margin: 0;
+  padding-left: 30px;
+  padding-bottom: 22px;
+  font-family: @addition-font;
+  color: @midnight-grey;
+}
+
+.show-more__button {
+  .font(@fz: 16px, @lh: 20px);
+  display: block;
+  width: 280px;
+  height: 40px;
+  margin-bottom: 25px;
+  padding-top: 9px;
+  box-sizing: border-box;
+  background-color: @grey;
+  color: @midnight-grey;
+  text-transform: uppercase;
+  text-align: center;
+
+  &:hover {
+    background-color: #ebebeb;
+  }
+
+  &:active {
+    color: rgba(68, 68, 68, 0.3);
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .show-more {
+    margin-top: 153px;
+    border: 1px solid #ededed;
+
+    &::before {
+      top: 54px;
+      left: 132px;
+
+      width: 60px;
+      height: 60px;
+
+      background-image: url("../img/icon-plus.svg");
+      background-color: @white;
+    }
+  }
+
+  .show-more__title {
+    .font(@fz: 20px, @lh: 20px);
+    width: 166px;
+    padding: 108px 0 27px 79px;
+    text-align: center;
+  }
+
+  .show-more__text {
+    .font(@fz: 16px);
+    width: 200px;
+    text-align: center;
+    padding-left: 61px;
+    padding-bottom: 58px;
+  }
+
+  .show-more__button {
+    width: 249px;
+    margin: auto;
+    margin-top: 27px;
+    margin-bottom: 39px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .show-more {
+    padding-top: 48px;
+  }
+
+  .show-more::before {
+    top: 54px;
+    left: 90px;
+  }
+
+  .show-more__title {
+    padding: 115px 0 27px 37px;
+  }
+
+  .show-more__text {
+    padding-left: 19px;
+    padding-bottom: 83px;
+  }
+
+  .show-more__button {
+    width: 169px;
+    margin-top: 0;
+  }
+}
